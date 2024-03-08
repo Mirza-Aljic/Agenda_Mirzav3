@@ -1,0 +1,63 @@
+﻿<Window x:Class="Agenda_Mirzav3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Agenda_Mirzav3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!--Création de 2 column-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <!--Création de 4 Row dans la 1ere columun-->
+        <Grid Grid.Column="0" Background="#551fbd">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Mon prenom-->
+            <TextBlock Name="TB_MyName" Grid.Row="0" Text="Mirza Aljic" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <!--Boutton Contact-->
+            <Button Name="BTN_Contact" Grid.Row="1" Content="Contact" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <!--Boutton To Do List-->
+            <Button Name="BTN_To_Do_List" Grid.Row="2" Content="To Do List" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <!--Boutton Calendar-->
+            <Button Name="BTN_Calendar" Grid.Row="3" Content="Calendar" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <!--2eme column diviser en 2 row-->
+        <Grid Grid.Column="1" Name="Ecran">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <!--1er row diviser en 4-->
+            <Grid Grid.Row="0" Background="#a2eacb">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Boutton Add  -->
+                <Button Name="BTN_AddContact" Grid.Column="0" Content="Add" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_AddContact_Click"/>
+                <!-- Boutton Modify-->
+                <Button Name="BTN_Modify" Grid.Column="1" Content="Modify" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_Modify_Click" />
+                <!-- Boutton Delate-->
+                <Button Name="BTN_Delate" Grid.Column="2" Content="Delate" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_Delate_Click"/>
+                <!-- Boutton Search-->
+                <Button Name="BTN_Search" Grid.Column="3" Content="Search" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <!-- Datagrid-->
+            <DataGrid Grid.Row="1" Name="DG_Contact">
+
+            </DataGrid>
+
+        </Grid>
+    </Grid>
+</Window>
