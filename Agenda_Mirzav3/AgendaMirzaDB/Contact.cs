@@ -21,11 +21,9 @@ public partial class Contact
 
     public string Sexe { get; set; } = null!;
 
-    public int StatusContactIdStatusContact { get; set; }
+    public string Status { get; set; } = null!;
 
     public virtual ICollection<SocialProfil> SocialProfils { get; set; } = new List<SocialProfil>();
-
-    public virtual ICollection<StatusContact> StatusContacts { get; set; } = new List<StatusContact>();
 
     public virtual ICollection<ToDoList> ToDoLists { get; set; } = new List<ToDoList>();
 }

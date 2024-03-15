@@ -15,6 +15,7 @@ namespace Agenda_Mirzav3.Service.DAO
             using (var context = new AgendaMirzaContext()) 
             {
                 var allContacts = context.Contacts.ToList();
+               
                 return allContacts;
             }
         }

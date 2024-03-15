@@ -7,12 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <!--Création de 2 column-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
-        <!--Création de 4 Row dans la 1ere columun-->
+
         <Grid Grid.Column="0" Background="#551fbd">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -20,43 +19,33 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <!--Mon prenom-->
+
             <TextBlock Name="TB_MyName" Grid.Row="0" Text="Mirza Aljic" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+
             <!--Boutton Contact-->
-            <Button Name="BTN_Contact" Grid.Row="1" Content="Contact" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Name="BTN_Contact" Grid.Row="1" Content="Contact" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_Contact_Click"/>
             <!--Boutton To Do List-->
-            <Button Name="BTN_To_Do_List" Grid.Row="2" Content="To Do List" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Name="BTN_To_Do_List" Grid.Row="2" Content="To Do List" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_To_Do_List_Click"/>
             <!--Boutton Calendar-->
-            <Button Name="BTN_Calendar" Grid.Row="3" Content="Calendar" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Name="BTN_Calendar" Grid.Row="3" Content="Calendar" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_Calendar_Click"/>
+
         </Grid>
 
-        <!--2eme column diviser en 2 row-->
-        <Grid Grid.Column="1" Name="Ecran">
+        <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="8*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <!--1er row diviser en 4-->
-            <Grid Grid.Row="0" Background="#a2eacb">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <!-- Boutton Add  -->
-                <Button Name="BTN_AddContact" Grid.Column="0" Content="Add" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_AddContact_Click"/>
-                <!-- Boutton Modify-->
-                <Button Name="BTN_Modify" Grid.Column="1" Content="Modify" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_Modify_Click" />
-                <!-- Boutton Delate-->
-                <Button Name="BTN_Delate" Grid.Column="2" Content="Delate" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BTN_Delate_Click"/>
-                <!-- Boutton Search-->
-                <Button Name="BTN_Search" Grid.Column="3" Content="Search" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Grid>
-            <!-- Datagrid-->
-            <DataGrid Grid.Row="1" Name="DG_Contact">
 
-            </DataGrid>
+            <Grid Grid.Row="0" Name="Window_Container">
+
+            </Grid>
+
+
+            <Grid Grid.Row="1" Name="Grid_Footer">
+                <Label Content="Application V1" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" />
+            </Grid>
+
 
         </Grid>
     </Grid>

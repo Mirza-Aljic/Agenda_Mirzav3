@@ -24,33 +24,32 @@ namespace Agenda_Mirzav3
     /// </summary>
     public partial class MainWindow : Window
     {
-        DAO_Contact Contact_DB;
+        
         public MainWindow()
         {
             InitializeComponent();
 
-            Contact_DB = new DAO_Contact();
-            DG_Contact.ItemsSource = Contact_DB.GetAllContacts();
         }
 
-        private void BTN_AddContact_Click(object sender, RoutedEventArgs e)
+        private void BTN_Contact_Click(object sender, RoutedEventArgs e)
         {
-            Add_Contact add_Contact = new Add_Contact();
-            this.Content = add_Contact;
+            Window_Container.Children.Clear();
+            View.PageContact contact = new View.PageContact();
+            Window_Container.Children.Add(contact);
         }
 
-        private void BTN_Modify_Click(object sender, RoutedEventArgs e)
+        private void BTN_To_Do_List_Click(object sender, RoutedEventArgs e)
         {
-            Contact contacte = DG_Contact.SelectedItem as Contact;
-            Contact_DB.UpdateContact(contacte);
-            DG_Contact.ItemsSource = Contact_DB.GetAllContacts();
+            Window_Container.Children.Clear();
+            View.To_Do_List to_do_list = new View.To_Do_List();
+            Window_Container.Children.Add(to_do_list);
         }
 
-        private void BTN_Delate_Click(object sender, RoutedEventArgs e)
+        private void BTN_Calendar_Click(object sender, RoutedEventArgs e)
         {
-            Contact contacte = DG_Contact.SelectedItem as Contact;
-            Contact_DB.DelateContact(contacte.Id);
-            DG_Contact.ItemsSource = Contact_DB.GetAllContacts();
+            Window_Container.Children.Clear();
+            View.Calendar calendar = new View.Calendar();
+            Window_Container.Children.Add(calendar);
         }
     }
 }

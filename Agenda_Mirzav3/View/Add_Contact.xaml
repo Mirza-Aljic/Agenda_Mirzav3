@@ -6,7 +6,119 @@
              xmlns:local="clr-namespace:Agenda_Mirzav3.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Aquamarine">
-            
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Name="Grid_Nom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Nom" Text="Nom" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Name="TB_Nom" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+
+        <Grid Grid.Row="1" Name="Grid_Prenom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Prenom" Text="Prenom" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Name="TB_Prenom" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+
+        <Grid Grid.Row="2" Name="Grid_Adresse">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Adresse" Text="Adresse" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Name="TB_Adresse" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+
+        <Grid Grid.Row="3" Name="Grid_Email">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Email" Text="Email" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Name="TB_Email" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+
+        <Grid Grid.Row="4" Name="Grid_Numero">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Numero" Text="Numero" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Name="TB_Numero" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+
+        <Grid Grid.Row="5" Name="Grid_Birthday">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Birthday" Text="Birthday" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <DatePicker Grid.Column="1" Width="200" Name="DP_Birthday"></DatePicker>
+        </Grid>
+
+
+        <Grid Grid.Row="6" Name="Grid_Sexe">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Sexe" Text="Sexe" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Name="TB_Sexe" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="7" Name="Grid_Status">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="TBL_Status" Text="Status" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Name="TB_Status" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="8" Name="Grid_Add">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                
+            <Button Grid.Column="0" Name="BTN_Add" Height="40" Width="200" Content="Add Contact" Click="BTN_Add_Click"/>
+            <Button Grid.Column="1" Name="BTN_Back"  Height="40" Width="200" Content="Back" Click="BTN_Back_Click"/>
+
+        </Grid>
+
+
+
+
     </Grid>
 </UserControl>

@@ -21,8 +21,6 @@ public partial class AgendaMirzaContext : DbContext
 
     public virtual DbSet<SocialProfil> SocialProfils { get; set; }
 
-    public virtual DbSet<StatusContact> StatusContacts { get; set; }
-
     public virtual DbSet<Task> Tasks { get; set; }
 
     public virtual DbSet<ToDoList> ToDoLists { get; set; }
@@ -43,8 +41,6 @@ public partial class AgendaMirzaContext : DbContext
 
             entity.ToTable("contact");
 
-            entity.HasIndex(e => e.StatusContactIdStatusContact, "fk_Contact_Status Contact_idx");
-
             entity.Property(e => e.Idcontact)
                 .ValueGeneratedNever()
                 .HasColumnName("idcontact");
@@ -54,7 +50,7 @@ public partial class AgendaMirzaContext : DbContext
             entity.Property(e => e.Numero).HasMaxLength(20);
             entity.Property(e => e.Prenom).HasMaxLength(45);
             entity.Property(e => e.Sexe).HasColumnType("enum('Men','Woman')");
-            entity.Property(e => e.StatusContactIdStatusContact).HasColumnName("Status Contact_idStatus Contact");
+            entity.Property(e => e.Status).HasColumnType("enum('Amis','Famille','Collegue')");
         });
 
         modelBuilder.Entity<SocialMedium>(entity =>
@@ -97,28 +93,6 @@ public partial class AgendaMirzaContext : DbContext
                 .HasForeignKey(d => d.SocialMediaIdSocialMedia)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_Social Profil_Social Media1");
-        });
-
-        modelBuilder.Entity<StatusContact>(entity =>
-        {
-            entity.HasKey(e => new { e.IdStatusContact, e.ContactIdcontact })
-                .HasName("PRIMARY")
-                .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
-            entity.ToTable("status contact");
-
-            entity.HasIndex(e => e.ContactIdcontact, "fk_status contact_contact1_idx");
-
-            entity.Property(e => e.IdStatusContact)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("idStatus Contact");
-            entity.Property(e => e.ContactIdcontact).HasColumnName("contact_idcontact");
-            entity.Property(e => e.Status).HasMaxLength(45);
-
-            entity.HasOne(d => d.ContactIdcontactNavigation).WithMany(p => p.StatusContacts)
-                .HasForeignKey(d => d.ContactIdcontact)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_status contact_contact1");
         });
 
         modelBuilder.Entity<Task>(entity =>
